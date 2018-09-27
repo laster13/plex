@@ -9,11 +9,10 @@ ENV \
   USE_DOCKER=false \
   USE_SUDO=false
 
-LABEL Description="Plex Plexdrive Rclone Plex_autoscan Unionfs_cleaner Plex_dupefinder" \
+LABEL Description="Plex Plexdrive Rclone Plex_autoscan Plex_dupefinder" \
       tags="latest" \
       maintainer="laster13 <https://github.com/laster13>" \
       Plex_autoscan="https://github.com/l3uddz/plex_autoscan" \
-      Unionfs_cleaner="https://github.com/l3uddz/unionfs_cleaner" \
       Plex_dupefinder="https://github.com/l3uddz/plex_dupefinder" \
       Plexdrive-5.0.0="https://github.com/dweidenfeld/plexdrive"
 
@@ -34,7 +33,7 @@ RUN \
     wget \
     python3-setuptools \
     g++ && \
-  # Get plex_autoscan, unionfs_cleaner and plex_dupefinder
+  # Get plex_autoscan and plex_dupefinder
   git clone --depth 1 --single-branch https://github.com/l3uddz/plex_autoscan.git /plex_autoscan && \
   git clone --depth 1 --single-branch https://github.com/l3uddz/plex_dupefinder.git && \
   # Install/update pip and requirements for plex_autoscan
